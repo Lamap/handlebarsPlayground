@@ -1,0 +1,9 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+.handlebar-playground {
+  background: #eeeeee;
+  &__main {
+    background: #aaa;
+    font-color: $gray-base;
+  }
+}

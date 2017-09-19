@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+        <script type="text/javascript" src="./dist/bundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="./dist/main.css">
+
+    </head>
+    <body class="handlebar-playground">
+        <!-- main -->
+        <script id="main-template" type="text/x-handlebars-template">
+            <div>{{title}}</div>
+            <div>{{> testpartial test}}</div>
+        </script>
+
+        <!-- -->
+        <script id="belso-jeno" type="text/x-handlebars">
+            <div> belső {{value}} </div>
+            <div>
+                leg-belső {{> testpartial-inner child}}
+            </div>
+        </script>
+        <script id="leg-belso-jeno" type="text/x-handlebars">
+            <div>legbelső {{value}}</div>
+        </script>
+    </body>
+
+</html>
