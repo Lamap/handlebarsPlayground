@@ -1,5 +1,6 @@
 //require("./main/main.scss"); this does not work with webpack
 //require('handlebars/runtime'); does not load the module
+//require("bootstrap");
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
 
         sampleNews.isTop = options.isTop;
+        sampleNews.isFloating = options.isFloating;
+
 
         if (options && options.isImageLess) {
             delete sampleNews.image;
@@ -60,7 +63,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         mostPopular: {
             title: "Most popular",
             news: [
-                {}
+                createNews({isFloating: true}),
+                createNews({isFloating: true}),
+                createNews({isFloating: true}),
+                createNews({isFloating: true}),
+                createNews({isFloating: true})
             ]
         },
         specialReport: {

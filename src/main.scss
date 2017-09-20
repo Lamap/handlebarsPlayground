@@ -116,6 +116,10 @@ $hb-pgr-news-border: 1px dotted $hb-pgr-light-text-color;
   }
   &__summary {
     display: none;
+    font-family: Georgia,serif;
+    font-size: 18px;
+    color: $hb-pgr-secondary-text-color;
+    padding: 20px 0px;
   }
 }
 .hb-pgr-news--top {
@@ -128,16 +132,35 @@ $hb-pgr-news-border: 1px dotted $hb-pgr-light-text-color;
     }
     &__summary {
       display: block;
-      font-family: Georgia,serif;
-      font-size: 18px;
-      color: $hb-pgr-secondary-text-color;
-      padding: 20px 0px;
     }
     &__text-block {
       border: $hb-pgr-news-border;
       border-top: none;
       display: inline-block;
       padding: 50px;
+    }
+  }
+}
+.hb-pgr-news--floating {
+  margin-bottom: 30px;
+  .hb-pgr-news {
+    &__wrapper {
+      display: flex;
+    }
+    &__thumb {
+      width: 275px;
+      margin-right: 30px;
+    }
+    &__title {
+      font-family: Brunel-Deck-Semibold, Georgia, serif;
+      font-size: 30px;
+      margin-top: 0;
+    }
+    &__text-block {
+      width: 66%;
+    }
+    &__summary {
+      display: block;
     }
   }
 }
@@ -171,6 +194,30 @@ $hb-pgr-news-border: 1px dotted $hb-pgr-light-text-color;
         border: none;
         border-bottom: $hb-pgr-news-border;
         padding: 20px;
+      }
+    }
+  }
+  .hb-pgr-news--floating {
+    .hb-pgr-news {
+      &__wrapper {
+        flex-direction: row-reverse;
+      }
+      &__thumb {
+        width: 80px;
+        margin-left: 20px;
+        margin-right: 0px;
+      }
+      &__title {
+        font-size: 18px;
+      }
+      &__category {
+        display: none
+      }
+      &__summary {
+        display: none;
+      }
+      &__text-block {
+        border-bottom: $hb-pgr-news-border;
       }
     }
   }

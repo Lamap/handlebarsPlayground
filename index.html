@@ -4,6 +4,8 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+        <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script type="text/javascript" src="./dist/bundle.js"></script>
         <link rel="stylesheet" type="text/css" href="./dist/main.css">
 
@@ -36,12 +38,19 @@
                     </section>
                     <section class="hb-pgr-most-popular-news">
                         {{> sectionHeaderPartial mostPopular}}
+                        <ul class="list-unstyled">
+                            {{#each mostPopular.news}}
+                            <li>{{> newsPartial this}}</li>
+                            {{/each}}
+                        </ul>
                     </section>
                     <section class="hb-pgr-special-report">
                         {{> sectionHeaderPartial specialReport}}
                     </section>
                     <section class="hb-pgr-special-videos">
                         {{> sectionHeaderPartial videos}}
+                        <div class="hb-pgr-special-videos__main-video"></div>
+                        <div class="hb-pgr-special-videos__sub-videos"></div>
                     </section>
                 </div>
                 {{> footerPartial footer}}
@@ -62,8 +71,8 @@
 
         <!-- news item -->
         <script id="news-partial" type="text/x-handlebars">
-            <article class="hb-pgr-news {{#if isTop}} hb-pgr-news--top{{/if}}">
-                <a href="{{href}}">
+            <article class="hb-pgr-news {{#if isTop}} hb-pgr-news--top{{/if}} {{#if isFloating}} hb-pgr-news--floating{{/if}}">
+                <a href="{{href}}" class="hb-pgr-news__wrapper">
                     {{#if image}}
 
                     <div class="hb-pgr-news__thumb">
@@ -87,7 +96,7 @@
             </article>
         </script>
 
-        <!-- footer -->
+        <!-- section header -->
         <script id="section-header-partial" type="text/x-handlebars">
             <h2 class="hb-pgr-section-header">
                 <div class="hb-pgr-section-header__wing"></div>
